@@ -1,93 +1,248 @@
-# Catch The Ball
+# 🎮 Bälle – Pygame Game
 
+A simple 2D game built with **Python** and **Pygame**. The player controls a character and tries to catch falling balls to increase their score.
 
+## 📌 Description
 
-## Getting started
+In this game, balls randomly appear at the top of the screen and fall downward. The player controls the character using the **Left** and **Right** arrow keys.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Each caught ball gives the player **1 point**.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+The game continues until the player closes the game window.
 
-## Add your files
+## 🕹️ Controls
 
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+| Key          | Action        |
+| ------------ | ------------- |
+| `←`          | Move left     |
+| `→`          | Move right    |
+| Close window | Exit the game |
 
+## ✨ Features
+
+* Player movement using the keyboard
+* Randomly spawning falling balls
+* Collision detection
+* Score system
+* Smooth movement using delta time
+* 60 FPS game loop
+* Custom images for the player, balls, and background
+
+## 📁 Project Structure
+
+```text
+project/
+│
+├── assets/
+│   ├── avatar.png
+│   └── ball.png
+│
+├── background.jpg
+├── main.py
+└── README.md
 ```
-cd existing_repo
-git remote add origin https://git.bbcag.ch/inf-bl/zh/2026/team-b/zkurzd/python/catch-the-ball.git
-git branch -M main
-git push -uf origin main
+
+> Replace `main.py` with the actual name of your Python file if it is different.
+
+## 🛠️ Requirements
+
+You need the following to run the game:
+
+* Python 3.9+
+* Pygame
+
+Install Pygame with:
+
+```bash
+pip install pygame
 ```
 
-## Integrate with your tools
+Or:
 
-* [Set up project integrations](https://git.bbcag.ch/inf-bl/zh/2026/team-b/zkurzd/python/catch-the-ball/-/settings/integrations)
+```bash
+python -m pip install pygame
+```
 
-## Collaborate with your team
+## 🚀 Installation & Running
 
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+1. Clone the repository:
 
-## Test and Deploy
+```bash
+git clone <REPOSITORY_URL>
+```
 
-Use the built-in continuous integration in GitLab.
+2. Navigate to the project directory:
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
+```bash
+cd project
+```
 
-***
+3. Install the required dependency:
 
-# Editing this README
+```bash
+pip install pygame
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+4. Run the game:
 
-## Suggestions for a good README
+```bash
+python main.py
+```
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+## ⚙️ Game Settings
 
-## Name
-Choose a self-explaining name for your project.
+The main game settings can be changed at the beginning of the program:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+```python
+WIDTH = 800
+HEIGHT = 600
+FPS = 60
+```
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+### Window Size
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+```python
+WIDTH = 800
+HEIGHT = 600
+```
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+These values define the width and height of the game window.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+### Frame Rate
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+```python
+FPS = 60
+```
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+This defines the maximum number of frames processed per second.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### Player Speed
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+The player's movement speed is defined in the `Player` class:
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+```python
+self.rect.x += 300 * dt
+```
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+and:
 
-## License
-For open source projects, say how it is licensed.
+```python
+self.rect.x -= 300 * dt
+```
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+The value `300` controls the player's movement speed.
+
+### Ball Speed
+
+The falling speed of the balls is defined in the `Star` class:
+
+```python
+self.rect.y += 150 * dt
+```
+
+The value `150` controls how quickly the balls fall.
+
+### Ball Spawn Rate
+
+A new ball is created approximately every second:
+
+```python
+if timer > 1:
+    timer = 0
+    stars.add(Star())
+```
+
+You can decrease the value `1` to make balls spawn more frequently.
+
+## 🧩 How It Works
+
+The game loop consists of several main stages.
+
+### 1. Event Handling
+
+The game checks for Pygame events, such as closing the window:
+
+```python
+for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        running = False
+```
+
+### 2. Updating Objects
+
+The player's and balls' positions are updated every frame.
+
+The game uses delta time:
+
+```python
+dt = clock.tick(FPS) / 1000
+```
+
+This makes movement consistent regardless of the frame rate.
+
+### 3. Spawning Balls
+
+A new `Star` object is created every second at a random horizontal position at the top of the screen.
+
+### 4. Collision Detection
+
+When the player catches a ball:
+
+```python
+hits = pygame.sprite.spritecollide(player, stars, True)
+```
+
+The ball is removed and the score is increased:
+
+```python
+score += len(hits)
+```
+
+### 5. Rendering
+
+Every frame, the game draws:
+
+* the background;
+* falling balls;
+* the player.
+
+The current score is displayed in the game window title:
+
+```python
+pygame.display.set_caption(f"Bälle: {score}")
+```
+
+## 🖼️ Assets
+
+The following files are required for the game to work correctly:
+
+```text
+assets/avatar.png
+assets/ball.png
+background.jpg
+```
+
+Make sure these files are located in the correct directories.
+
+## 🔧 Possible Improvements
+
+The game could be extended with:
+
+* Screen boundaries for the player
+* Sound effects
+* Background music
+* Increasing ball speed over time
+* A main menu
+* A Game Over screen
+* A high-score system
+* Different types of falling objects
+* Multiple difficulty levels
+* An on-screen score display
+* Player animations
+* A lives system
+
+## 📄 License
+
+This project was created for educational purposes.
+
+You can add a license such as the **MIT License** if you plan to publish the project on GitHub.
